@@ -38,9 +38,9 @@ pipeline {
         stage('Sonar Analysis') {
             steps {
                withSonarQubeEnv('sonar'){
-                   sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Santa \
+                   sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.url=http://20.81.137.66:9000/ -Dsonar.login=squ_6bb6163944267883e6dc66e5511d4c1b71ce7513 -Dsonar.ProjectName=Gift-Exchange \
                    -Dsonar.java.binaries=. \
-                   -Dsonar.projectKey=Santa '''
+                   -Dsonar.projectKey=Gift-Exchange '''
                }
             }
         }
